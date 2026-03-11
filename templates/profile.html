@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="glass">
+
+<h2>Profile</h2>
+
+{% if user["profile_pic"] %}
+
+<img src="/static/uploads/{{user['profile_pic']}}" width="120">
+
+{% endif %}
+
+<p><b>Name:</b> {{user["name"]}}</p>
+
+<p><b>Username:</b> {{user["username"]}}</p>
+
+<p><b>University:</b> {{user["university"]}}</p>
+
+<p><b>Address:</b> {{user["address"]}}</p>
+
+<p><b>Phone:</b> {{user["phone"]}}</p>
+
+<p><b>Email:</b> {{user["email"]}}</p>
+
+<hr>
+
+<h3>Your Posts</h3>
+
+{% for post in posts %}
+
+<p>{{post["title"]}}</p>
+
+{% endfor %}
+
+<a href="/home">Back</a>
+
+</div>
